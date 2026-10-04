@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1224">
+<title>Физика начинается здесь · 7 класс</title>
+<style>
+:root{--bg:#091225;--panel:#111d35;--panel2:#172541;--text:#f4f7ff;--muted:#aab8d2;--blue:#72c8ff;--cyan:#9ae9f2;--line:#2a3b5d;--good:#79e0b0;--bad:#ff9a9a;--gold:#ffd78a;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#1d3964 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+button{font:inherit;cursor:pointer;border:0}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.top{position:sticky;top:0;z-index:20;background:#091225eF;backdrop-filter:blur(16px);border-bottom:1px solid #253553;padding:12px clamp(14px,4vw,44px);display:flex;align-items:center;gap:16px}
+.brand{font-weight:800;letter-spacing:.02em;white-space:nowrap}.brand span{color:var(--blue)}.progress-wrap{flex:1;display:flex;align-items:center;gap:12px;min-width:70px}.progress{height:6px;background:#253553;border-radius:9px;flex:1;overflow:hidden}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#65baff,#9ae9f2);transition:width .35s}.progress-label{font-size:12px;color:var(--muted);white-space:nowrap}.topbtn,.btn{padding:10px 15px;border-radius:13px;background:#1c2d4c;color:var(--text);border:1px solid #34496d}.topbtn{font-size:13px}.btn.primary{background:linear-gradient(135deg,#65baff,#79dce9);color:#07152a;font-weight:800;border:0}.btn.ghost{background:transparent}.btn:disabled{opacity:.4;cursor:not-allowed}
+.layout{display:grid;grid-template-columns:245px minmax(0,900px);gap:28px;max-width:1250px;margin:26px auto;padding:0 22px;justify-content:center}.side{position:sticky;top:80px;align-self:start;background:#0d1930;border:1px solid #243656;border-radius:20px;padding:16px;max-height:calc(100vh - 100px);overflow:auto}.side-title{font-size:11px;color:#7f94b8;text-transform:uppercase;letter-spacing:.12em;margin:4px 10px 12px}.nav{width:100%;display:flex;gap:10px;align-items:center;text-align:left;padding:10px;border-radius:12px;background:transparent;color:#aebbd3;margin:2px 0;font-size:13px}.nav .n{width:25px;height:25px;display:grid;place-items:center;border-radius:8px;background:#1b2b49;color:#8ea7ce;font-size:11px;flex:none}.nav.active{background:#1a2c4b;color:white}.nav.active .n{background:#6fc8ff;color:#07152a;font-weight:800}.nav.done .n{background:#235343;color:#9af0c8}.side-note{font-size:12px;color:#8194b4;margin:16px 8px 4px}
+main{min-width:0}.chapter{display:none;animation:appear .35s ease}.chapter.active{display:block}@keyframes appear{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:none}}
+.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.hero{min-height:380px;display:flex;flex-direction:column;justify-content:center;padding:clamp(25px,5vw,58px);border:1px solid #2c4166;border-radius:28px;background:radial-gradient(circle at 80% 30%,#234b79 0,transparent 30%),linear-gradient(135deg,#122442,#0c1830 72%);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:250px;height:250px;border:1px solid #75cfff35;border-radius:50%;right:-70px;bottom:-105px;box-shadow:0 0 0 35px #75cfff09,0 0 0 70px #75cfff06}.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.04;letter-spacing:-.045em;max-width:650px;margin:12px 0 16px}.hero p{color:#c2cee2;max-width:610px;font-size:17px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.hero-art{position:absolute;right:6%;top:13%;width:220px;opacity:.85}
+h2{font-size:clamp(27px,4vw,39px);line-height:1.12;letter-spacing:-.03em;margin:9px 0 13px}h3{font-size:19px;margin:0 0 8px}.lead{font-size:17px;color:#c2cee2;max-width:720px}.section-head{margin:12px 0 22px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:linear-gradient(145deg,#14223d,#101b32);border:1px solid #293d60;border-radius:var(--radius);padding:20px;min-width:0}.card p{color:#afbed7;margin:6px 0 0}.tile{min-height:165px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;transition:.2s;position:relative;overflow:hidden}.tile:hover{transform:translateY(-3px);border-color:#6cbef4;background:#182b4b}.emoji{font-size:35px;margin-bottom:10px}.small{font-size:13px;color:var(--muted)}.callout{padding:15px 18px;border-left:3px solid var(--blue);background:#142541;border-radius:0 14px 14px 0;color:#dce8fb;margin:18px 0}.question{margin:20px 0;padding:20px;border:1px solid #3b5074;background:#12213b;border-radius:18px}.question strong{display:block;margin-bottom:12px}.answers{display:flex;flex-wrap:wrap;gap:9px}.answer{padding:10px 14px;background:#1c2d4a;color:#e9f1ff;border:1px solid #34496d;border-radius:12px;text-align:left}.answer:hover{border-color:var(--blue)}.answer.correct{background:#164535;border-color:#4ab786}.answer.wrong{background:#4b2832;border-color:#bd6978}.feedback{margin-top:12px;color:#d4e1f6;font-size:14px;min-height:20px}.reveal{display:none;margin-top:12px;color:#c5d6ef}.reveal.show{display:block}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{font-size:12px;padding:6px 10px;border-radius:99px;background:#203453;color:#bcd4f2}
+.navbottom{display:flex;justify-content:space-between;gap:10px;margin:24px 0 60px}.navbottom .btn{min-width:110px}.iconbox{height:125px;border-radius:15px;background:radial-gradient(circle at center,#244d76,#142541 72%);display:grid;place-items:center;margin-bottom:14px;overflow:hidden}.iconbox svg{max-width:100%;height:110px}
+.sim{background:#0c1830;border:1px solid #2c4267;border-radius:20px;padding:18px;margin:18px 0}.sim-stage{height:230px;display:grid;place-items:center;position:relative;background:radial-gradient(ellipse,#182e50,#0c1830 70%);border-radius:15px;overflow:hidden}.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:13px}.controls label{font-size:13px;color:#afc0da}.controls input[type=range]{accent-color:#7bd0ff;max-width:210px}.pendulum{width:240px;height:200px;overflow:visible}.bob{fill:#7bd0ff;stroke:#c4f2ff;stroke-width:2}.string{stroke:#d6e6fb;stroke-width:2}.pivot{fill:#d6e6fb}.muted{color:var(--muted)}.badge{font-size:11px;color:#9db5d8;border:1px solid #344969;border-radius:99px;padding:4px 8px}
+.quiz-progress{height:5px;background:#263958;border-radius:9px;overflow:hidden;margin:12px 0 22px}.quiz-progress span{display:block;width:0;height:100%;background:var(--cyan);transition:.3s}.result{text-align:center;padding:28px}.score{font-size:56px;font-weight:850;color:var(--cyan);line-height:1.2}.teacher{display:none;border:1px dashed #6484b5;background:#10213b;border-radius:16px;padding:16px;margin:14px 0;color:#c6d7ef}.teacher.show{display:block}.teacher strong{color:#fff}.footer{color:#7085a7;text-align:center;font-size:12px;padding:0 0 25px}
+@media(max-width:900px){.layout{grid-template-columns:1fr;gap:14px;margin:14px auto}.side{position:relative;top:auto;max-height:none;display:flex;gap:5px;overflow-x:auto;padding:8px}.side-title,.side-note{display:none}.nav{width:auto;min-width:max-content;margin:0;padding:8px}.nav .n{width:24px;height:24px}.hero-art{width:145px;right:2%;top:7%;opacity:.5}.hero{min-height:350px}.hero h1,.hero p{position:relative;z-index:1}.top{gap:8px}.brand{font-size:13px}.progress-label{display:none}}
+@media(max-width:560px){.grid,.grid.three{grid-template-columns:1fr}.hero{padding:25px;min-height:390px}.hero-art{top:auto;bottom:8px;width:125px}.hero p{font-size:15px}.card{padding:17px}.topbtn{padding:8px;font-size:12px}.brand{max-width:95px;white-space:normal;line-height:1.1}.navbottom .btn{min-width:0;flex:1}.sim-stage{height:190px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">ЛАБОРАТОРИЯ <span>ФИЗИКИ</span></div>
+  <div class="progress-wrap"><div class="progress"><i id="progress"></i></div><span class="progress-label" id="progressLabel">Глава 1 из 9</span></div>
+  <button class="topbtn" id="teacherToggle" aria-pressed="false">✦ Учителю</button>
+  <button class="topbtn" id="fullBtn" title="Полноэкранный режим">⛶</button>
+</header>
+<div class="layout">
+<aside class="side" aria-label="Навигация по уроку">
+  <div class="side-title">Маршрут урока</div>
+  <div id="navList"></div>
+  <div class="side-note">Проходи главы в своём темпе. К ним можно возвращаться.</div>
+</aside>
+<main id="main">
+<section class="chapter active" data-title="Старт">
+  <div class="hero">
+    <svg class="hero-art" viewBox="0 0 240 240" aria-hidden="true"><defs><radialGradient id="orb"><stop stop-color="#b4f4ff"/><stop offset=".35" stop-color="#58b9ff"/><stop offset="1" stop-color="#3b76cb" stop-opacity=".1"/></radialGradient></defs><circle cx="120" cy="120" r="58" fill="url(#orb)" opacity=".9"/><ellipse cx="120" cy="120" rx="105" ry="38" fill="none" stroke="#a3e8ff" stroke-width="2" transform="rotate(-28 120 120)"/><ellipse cx="120" cy="120" rx="105" ry="38" fill="none" stroke="#a3e8ff" stroke-width="1.5" transform="rotate(52 120 120)"/><circle cx="199" cy="70" r="7" fill="#d8faff"/><circle cx="43" cy="158" r="5" fill="#8ad9ff"/></svg>
+    <div class="eyebrow">Первое путешествие · 7 класс</div>
+    <h1>Физика начинается <span style="color:#8bdcff">здесь.</span></h1>
+    <p>Почему летит самолёт? Откуда берётся радуга? И как невидимые законы управляют привычными вещами? Сегодня ты начнёшь искать ответы.</p>
+    <div class="hero-actions"><button class="btn primary" onclick="go(1)">Начать исследование →</button><span class="badge">45–60 минут · 9 глав</span></div>
+  </div>
+  <div class="grid three">
+    <div class="card"><div class="emoji">🔎</div><h3>Наблюдай</h3><p>Замечай удивительное в обычном.</p></div>
+    <div class="card"><div class="emoji">🧪</div><h3>Проверяй</h3><p>Ставь опыты и сравнивай результат.</p></div>
+    <div class="card"><div class="emoji">💡</div><h3>Объясняй</h3><p>Находи причины явлений.</p></div>
+  </div>
+  <div class="teacher"><strong>Подсказка учителю:</strong> начните с беседы. Попросите ученицу выбрать самый загадочный вопрос и объяснить, как она думает, почему это происходит. Не оценивайте предположения — важно включить любопытство.</div>
+</section>
+
+<section class="chapter" data-title="Что такое физика">
+  <div class="section-head"><div class="eyebrow">Глава 1 · 5 минут</div><h2>Что такое физика?</h2><p class="lead">Физика — наука о природе, которая изучает явления, свойства тел и закономерности окружающего мира.</p></div>
+  <div class="callout">Представь, что ты детектив. Только вместо поиска преступника физик ищет причины: почему тело движется, светится, нагревается или издаёт звук.</div>
+  <h3>Физика вокруг нас</h3><p class="muted">Нажми на объект — узнай, какое явление за ним скрывается.</p>
+  <div class="grid three">
+    <button class="card tile" onclick="reveal('carmore')"><span class="emoji">🚲</span><h3>Велосипед</h3><p>Почему он движется?</p><div class="reveal" id="carmore">Это <b>механическое явление</b>: положение тела меняется со временем. На движение влияют силы, например толчок ногами и трение.</div></button>
+    <button class="card tile" onclick="reveal('lightmore')"><span class="emoji">💡</span><h3>Лампочка</h3><p>Откуда свет?</p><div class="reveal" id="lightmore">Здесь происходят электрические и световые явления: электрическая энергия преобразуется в световую и тепловую.</div></button>
+    <button class="card tile" onclick="reveal('te amore')"><span class="emoji">☕</span><h3>Чай</h3><p>Почему остывает?</p><div class="reveal" id="te amore">Это тепловое явление: энергия передаётся от более тёплого чая окружающей среде, и температура чая снижается.</div></button>
+    <button class="card tile" onclick="reveal('magmore')"><span class="emoji">🧲</span><h3>Магнит</h3><p>Как притягивает скрепку?</p><div class="reveal" id="magmore">Магнитное взаимодействие может действовать на расстоянии. Магнит притягивает некоторые материалы, например железо.</div></button>
+    <button class="card tile" onclick="reveal('soundmore')"><span class="emoji">🔔</span><h3>Колокольчик</h3><p>Как рождается звук?</p><div class="reveal" id="soundmore">При ударе колокольчик колеблется и создаёт звуковые волны, которые распространяются в воздухе.</div></button>
+    <button class="card tile" onclick="reveal('rainmore')"><span class="emoji">🌈</span><h3>Радуга</h3><p>Почему видны цвета?</p><div class="reveal" id="rainmore">Свет преломляется, отражается внутри капель воды и разлагается на цвета. Это оптическое явление.</div></button>
+  </div>
+  <div class="question"><strong>Подумай: физика изучает только космос, роботов и сложные приборы?</strong><div class="answers"><button class="answer" onclick="check(this,false,'Физика изучает и обычные процессы: движение, нагревание, свет, звук.')">Да, только сложное</button><button class="answer" onclick="check(this,true,'Верно! Физика помогает объяснить и самые привычные события.')">Нет, ещё и повседневную жизнь</button></div><div class="feedback"></div></div>
+  <div class="teacher"><strong>Спросите:</strong> какие физические явления ученица заметила по дороге на занятие? Попросите назвать хотя бы три.</div>
+</section>
+
+<section class="chapter" data-title="Физические явления">
+  <div class="section-head"><div class="eyebrow">Глава 2 · 7 минут</div><h2>Мир постоянно меняется</h2><p class="lead">Физическое явление — изменение, происходящее с телами или в окружающем мире, при котором обычно не образуется новое вещество.</p></div>
+  <div class="grid">
+    <div class="card"><div class="emoji">🏃</div><h3>Механические</h3><p>Движение и изменение положения тел: едет автобус, падает лист, качается качеля.</p></div>
+    <div class="card"><div class="emoji">🔥</div><h3>Тепловые</h3><p>Нагревание, охлаждение и изменение агрегатного состояния: тает лёд, кипит вода.</p></div>
+    <div class="card"><div class="emoji">⚡</div><h3>Электрические</h3><p>Явления, связанные с электрическими зарядами и током: работает фонарик, искрит статическое электричество.</p></div>
+    <div class="card"><div class="emoji">🧲</div><h3>Магнитные</h3><p>Взаимодействие магнитов и магнитное действие электрического тока.</p></div>
+    <div class="card"><div class="emoji">🌤️</div><h3>Световые</h3><p>Распространение, отражение и преломление света: тень, зеркало, радуга.</p></div>
+    <div class="card"><div class="emoji">🎵</div><h3>Звуковые</h3><p>Возникновение и распространение звука благодаря колебаниям.</p></div>
+  </div>
+  <div class="question" id="classify"><strong>Игра: определи явление. <span class="badge" id="classNum">1 из 6</span></strong><p id="classPrompt" style="font-size:19px">Тает снежинка на ладони.</p><div class="answers" id="classAnswers"></div><div class="feedback" id="classFeedback"></div><button class="btn ghost" id="classNext" style="margin-top:12px" hidden>Следующая ситуация →</button></div>
+  <div class="teacher"><strong>Важно:</strong> одно событие может включать несколько физических явлений. В игре ищем основное явление, на которое направлено внимание.</div>
+</section>
+
+<section class="chapter" data-title="Тела и вещества">
+  <div class="section-head"><div class="eyebrow">Глава 3 · 5 минут</div><h2>Тела и вещества</h2><p class="lead">Оглянись: вокруг много предметов. Физика помогает различать сам предмет и то, из чего он сделан.</p></div>
+  <div class="grid">
+    <div class="card"><div class="emoji">🧊</div><h3>Физическое тело</h3><p>Отдельный предмет или объект, имеющий форму и объём. Например, кубик льда, стакан, мяч.</p></div>
+    <div class="card"><div class="emoji">💧</div><h3>Вещество</h3><p>То, из чего состоят тела: вода, стекло, железо, древесина, пластмасса.</p></div>
+  </div>
+  <div class="callout"><b>Запомни:</b> стакан — физическое тело, а стекло — вещество, из которого он изготовлен. Из стекла можно сделать и окно, и вазу.</div>
+  <h3>Разложи по полочкам</h3><p class="muted">Выбери, чем является слово. Здесь «материя» — общее понятие, включающее вещество и физические поля.</p>
+  <div class="question"><strong id="sortPrompt">Железный гвоздь — это…</strong><div class="answers" id="sortAnswers"></div><div class="feedback" id="sortFeedback"></div><button class="btn ghost" id="sortNext" style="margin-top:12px" hidden>Дальше →</button></div>
+  <div class="teacher"><strong>Обратите внимание:</strong> «гвоздь» — тело, «железо» — вещество. Материя — более широкое понятие; не сводите её только к веществу.</div>
+</section>
+
+<section class="chapter" data-title="Наблюдения и опыты">
+  <div class="section-head"><div class="eyebrow">Глава 4 · 7 минут</div><h2>Как физики узнают новое?</h2><p class="lead">Сначала можно внимательно наблюдать, а затем поставить эксперимент — специально изменить условия и проверить предположение.</p></div>
+  <div class="grid">
+    <div class="card"><div class="emoji">👀</div><h3>Наблюдение</h3><p>Смотрим, что происходит, стараясь не вмешиваться. Например, наблюдаем, как тает лёд в комнате.</p></div>
+    <div class="card"><div class="emoji">🧪</div><h3>Эксперимент</h3><p>Создаём условия и проверяем идею. Например, сравниваем, где лёд тает быстрее — в тепле или прохладе.</p></div>
+  </div>
+  <div class="sim">
+    <div class="eyebrow">Виртуальная лаборатория 01</div><h3>Маятник: что меняет длина нити?</h3><p class="muted">Маятник — груз на нити, который может качаться. Измени длину и наблюдай: длинный маятник качается медленнее.</p>
+    <div class="sim-stage"><svg class="pendulum" viewBox="0 0 240 200" aria-label="Анимированный маятник"><line x1="120" y1="10" x2="120" y2="10" class="string" id="string"/><circle cx="120" cy="10" r="5" class="pivot"/><circle cx="120" cy="10" r="16" class="bob" id="bob"/><path d="M55 22 Q120 0 185 22" stroke="#385477" stroke-dasharray="4 5" fill="none"/></svg></div>
+    <div class="controls"><button class="btn primary" id="swingBtn">⏸ Пауза</button><label for="length">Длина нити</label><input id="length" type="range" min="55" max="155" value="110"><span class="badge" id="lengthValue">Средняя</span><span class="badge" id="periodValue">Период: ~1,3 с</span></div>
+    <div class="feedback" id="pendulumFeedback">Наблюдай за скоростью качания. Попробуй сделать нить длиннее.</div>
+  </div>
+  <div class="question"><strong>Что лучше всего описывает эксперимент?</strong><div class="answers"><button class="answer" onclick="check(this,false,'Это описание наблюдения. В эксперименте мы целенаправленно меняем условия.')">Смотреть, как маятник качается</button><button class="answer" onclick="check(this,true,'Да! Меняем длину нити и сравниваем, как меняется качание.')">Менять длину нити и сравнивать качание</button></div><div class="feedback"></div></div>
+  <div class="teacher"><strong>Вопрос ученице:</strong> что в опыте мы меняем? Что наблюдаем? Какой вывод можно сделать? Напомните: при сравнении важно менять один фактор за раз.</div>
+</section>
+
+<section class="chapter" data-title="Измерения">
+  <div class="section-head"><div class="eyebrow">Глава 5 · 5 минут</div><h2>Как измерить окружающий мир?</h2><p class="lead">Физическая величина — характеристика тела или явления, которую можно измерить и выразить числом с единицей измерения.</p></div>
+  <div class="grid">
+    <div class="card"><div class="emoji">📏</div><h3>Длина</h3><p>Линейка · метр (м), сантиметр (см)</p></div>
+    <div class="card"><div class="emoji">⏱️</div><h3>Время</h3><p>Секундомер · секунда (с)</p></div>
+    <div class="card"><div class="emoji">⚖️</div><h3>Масса</h3><p>Весы · килограмм (кг), грамм (г)</p></div>
+    <div class="card"><div class="emoji">🌡️</div><h3>Температура</h3><p>Термометр · градус Цельсия (°C)</p></div>
+  </div>
+  <div class="sim"><div class="eyebrow">Попробуй измерить</div><h3>Виртуальная линейка</h3><p class="muted">Передвигай ползунок и измеряй длину условного карандаша.</p><div style="background:#f3f7ff;border-radius:12px;padding:18px;color:#0b1b32"><div style="height:55px;display:flex;align-items:center"><div style="height:10px;width:var(--ruler);background:linear-gradient(90deg,#f3aa55,#f6d28b);border-radius:5px;position:relative;box-shadow:0 3px 7px #1113"><span style="position:absolute;right:0;top:-22px;font-size:12px;color:#172b48">✏️</span></div></div><div style="height:20px;border-top:2px solid #3b587f;background:repeating-linear-gradient(90deg,#3b587f 0 1px,transparent 1px 10%);position:relative"><span style="position:absolute;left:0;top:3px;font-size:10px">0</span><span style="position:absolute;left:50%;top:3px;font-size:10px">5</span><span style="position:absolute;right:0;top:3px;font-size:10px">10 см</span></div></div><div class="controls"><label for="ruler">Длина карандаша</label><input id="ruler" type="range" min="2" max="10" value="6"><span class="badge" id="rulerValue">6 см</span></div></div>
+  <div class="question"><strong>Как правильно записать результат измерения длины?</strong><div class="answers"><button class="answer" onclick="check(this,false,'Нужно указать и числовое значение, и единицу измерения.')">12</button><button class="answer" onclick="check(this,true,'Верно: число 12 и единица сантиметр вместе задают результат.')">12 см</button><button class="answer" onclick="check(this,false,'Единица без числового значения не сообщает длину.')">Сантиметр</button></div><div class="feedback"></div></div>
+  <div class="teacher"><strong>Подсказка:</strong> попросите ученицу измерить линейкой предмет рядом с ней и проговорить результат вместе с единицей измерения.</div>
+</section>
+
+<section class="chapter" data-title="Физика в жизни">
+  <div class="section-head"><div class="eyebrow">Глава 6 · 5 минут</div><h2>Один день с физикой</h2><p class="lead">Физика не заканчивается на страницах учебника. Она сопровождает нас с утра до вечера.</p></div>
+  <div class="grid">
+    <button class="card tile" onclick="reveal('day1')"><span class="emoji">⏰</span><h3>Утро · Будильник</h3><p>Как появляется звук?</p><div class="reveal" id="day1">Внутри динамика возникают колебания, которые передаются воздуху в виде звуковой волны.</div></button>
+    <button class="card tile" onclick="reveal('day2')"><span class="emoji">🫖</span><h3>Завтрак · Чайник</h3><p>Как нагревается вода?</p><div class="reveal" id="day2">Электрическая энергия в чайнике преобразуется в тепловую, вода получает энергию и нагревается.</div></button>
+    <button class="card tile" onclick="reveal('day3')"><span class="emoji">🚌</span><h3>Дорога · Транспорт</h3><p>Почему автобус движется?</p><div class="reveal" id="day3">Колёса взаимодействуют с дорогой, а двигатель помогает создать движение. Это механические явления.</div></button>
+    <button class="card tile" onclick="reveal('day4')"><span class="emoji">🪞</span><h3>Занятия · Доска</h3><p>Как мы видим предметы?</p><div class="reveal" id="day4">Свет от источника отражается от предметов и попадает в глаза. Так мы можем их видеть.</div></button>
+    <button class="card tile" onclick="reveal('day5')"><span class="emoji">📱</span><h3>Вечер · Телефон</h3><p>Как он заряжается?</p><div class="reveal" id="day5">При зарядке энергия передаётся аккумулятору, где она запасается в химической форме.</div></button>
+    <div class="card" style="display:flex;flex-direction:column;justify-content:center"><div class="emoji">🌌</div><h3>Вопрос дня</h3><p>Можно ли прожить день, не сталкиваясь с физическими явлениями?</p><p style="color:#8bdcff;font-weight:700">Подумай и обсуди с учителем.</p></div>
+  </div>
+  <div class="teacher"><strong>Обсуждение:</strong> предложите ученице выбрать один предмет в комнате и найти в нём как можно больше физических явлений.</div>
+</section>
+
+<section class="chapter" data-title="Квиз">
+  <div class="section-head"><div class="eyebrow">Глава 7 · 7 минут</div><h2>Проверка: юный физик</h2><p class="lead">12 коротких заданий помогут проверить, что ты уже умеешь объяснять.</p></div>
+  <div class="card" id="quizCard"><div class="small" id="quizCount">Вопрос 1 из 12</div><div class="quiz-progress"><span id="quizBar"></span></div><h3 id="quizQ"></h3><div class="answers" id="quizAnswers"></div><div class="feedback" id="quizFeedback"></div><button class="btn primary" id="quizNext" style="margin-top:18px" disabled>Следующий вопрос →</button></div>
+  <div class="teacher"><strong>Режим учителя:</strong> попросите ученицу не только выбрать вариант, но и объяснить ход рассуждений. Ошибка — повод вернуться к соответствующей главе, а не просто показать правильный ответ.</div>
+</section>
+
+<section class="chapter" data-title="Итоги">
+  <div class="section-head"><div class="eyebrow">Финиш</div><h2>Ты смотришь на мир глазами физика</h2><p class="lead">Ты сделала первый шаг: теперь знаешь, что наука начинается с любопытства и хорошего вопроса.</p></div>
+  <div class="card result"><div style="font-size:48px">🚀</div><div class="score" id="finalScore">—</div><h3 id="finalTitle">Первое исследование завершено!</h3><p id="finalText" class="muted">Продолжай замечать, задавать вопросы и искать объяснения.</p><div class="chips" style="justify-content:center;margin:18px"><span class="chip">Наблюдай</span><span class="chip">Проверяй</span><span class="chip">Делай выводы</span></div><button class="btn primary" onclick="restart()">Пройти урок ещё раз ↻</button> <button class="btn ghost" onclick="go(7)">Повторить квиз</button></div>
+  <div class="teacher"><strong>Завершение урока:</strong> попросите ученицу назвать одну новую вещь, которую она узнала, и один вопрос, который ей хотелось бы исследовать на следующем занятии.</div>
+</section>
+<div class="navbottom"><button class="btn ghost" id="prevBtn" onclick="go(current-1)">← Назад</button><button class="btn primary" id="nextBtn" onclick="go(current+1)">Далее →</button></div>
+<div class="footer">Интерактивный урок · Физика, 7 класс · Учимся исследовать мир</div>
+</main></div>
+<script>
+const chapters=[...document.querySelectorAll('.chapter')], navList=document.getElementById('navList');
+let current=0, teacher=false, completed=new Set(JSON.parse(localStorage.getItem('phys7done')||'[]'));
+const names=chapters.map(c=>c.dataset.title);
+function buildNav(){navList.innerHTML='';names.forEach((n,i)=>{let b=document.createElement('button');b.className='nav';b.innerHTML=`<span class="n">${i===0?'✦':i}</span><span>${n}</span>`;b.onclick=()=>go(i);b.dataset.i=i;navList.appendChild(b)})}
+function go(i){i=Math.max(0,Math.min(chapters.length-1,i));current=i;chapters.forEach((c,j)=>c.classList.toggle('active',j===i));document.querySelectorAll('.nav').forEach((b,j)=>{b.classList.toggle('active',j===i);b.classList.toggle('done',completed.has(j))});document.getElementById('progress').style.width=(i/(chapters.length-1)*100)+'%';document.getElementById('progressLabel').textContent=`Глава ${i+1} из ${chapters.length}`;document.getElementById('prevBtn').disabled=i===0;document.getElementById('nextBtn').textContent=i===chapters.length-1?'К началу ↺':'Далее →';document.getElementById('nextBtn').onclick=()=>i===chapters.length-1?go(0):go(i+1);window.scrollTo({top:0,behavior:'smooth'});if(i>0){completed.add(i-1);localStorage.setItem('phys7done',JSON.stringify([...completed]));document.querySelectorAll('.nav')[i-1]?.classList.add('done')}}
+function reveal(id){document.getElementById(id)?.classList.toggle('show')}
+function check(btn,ok,msg){let parent=btn.closest('.question');parent.querySelectorAll('.answer').forEach(a=>{a.disabled=true});btn.classList.add(ok?'correct':'wrong');let f=parent.querySelector('.feedback');f.textContent=(ok?'✓ Верно. ':'Попробуй разобраться. ')+msg;f.style.color=ok?'#91e9bb':'#ffc0c0'}
+document.getElementById('teacherToggle').onclick=()=>{teacher=!teacher;document.querySelectorAll('.teacher').forEach(x=>x.classList.toggle('show',teacher));document.getElementById('teacherToggle').setAttribute('aria-pressed',teacher);document.getElementById('teacherToggle').textContent=teacher?'✦ Скрыть подсказки':'✦ Учителю'};
+document.getElementById('fullBtn').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()};
+buildNav();go(0);
+// classification mini game
+const types=['Механическое','Тепловое','Электрическое','Магнитное','Световое','Звуковое'];
+const classify=[['Тает снежинка на ладони.','Тепловое'],['Едет велосипедист.','Механическое'],['Скрепка притягивается к магниту.','Магнитное'],['Зеркало отражает солнечный луч.','Световое'],['Звенит колокольчик.','Звуковое'],['Загорелась лампа от батарейки.','Электрическое']];
+let ci=0;function showClass(){let q=classify[ci];document.getElementById('classNum').textContent=`${ci+1} из ${classify.length}`;document.getElementById('classPrompt').textContent=q[0];let box=document.getElementById('classAnswers');box.innerHTML='';types.forEach(t=>{let b=document.createElement('button');b.className='answer';b.textContent=t;b.onclick=()=>{box.querySelectorAll('button').forEach(x=>x.disabled=true);let ok=t===q[1];b.classList.add(ok?'correct':'wrong');document.getElementById('classFeedback').textContent=(ok?'Верно! ':'Не совсем. ')+`Это ${q[1].toLowerCase()} явление.`;document.getElementById('classNext').hidden=false};box.appendChild(b)});document.getElementById('classFeedback').textContent='';document.getElementById('classNext').hidden=true}
+document.getElementById('classNext').onclick=()=>{ci=(ci+1)%classify.length;showClass()};showClass();
+// body / substance
+const sorts=[['Железный гвоздь','Тело','Это отдельный предмет, изготовленный из железа.'],['Железо','Вещество','Из железа делают гвозди, инструменты и детали.'],['Стеклянный стакан','Тело','Стакан — предмет, а стекло — вещество.'],['Вода','Вещество','Вода может входить в состав разных тел и объектов.'],['Материя','Материя','Общее понятие, включающее вещество и физические поля.']];
+let si=0;function showSort(){let [q]=sorts[si];document.getElementById('sortPrompt').textContent=q+' — это…';let box=document.getElementById('sortAnswers');box.innerHTML='';['Тело','Вещество','Материя'].forEach(t=>{let b=document.createElement('button');b.className='answer';b.textContent=t;b.onclick=()=>{box.querySelectorAll('button').forEach(x=>x.disabled=true);let ok=t===sorts[si][1];b.classList.add(ok?'correct':'wrong');document.getElementById('sortFeedback').textContent=(ok?'Правильно! ':'Подсказка: ')+sorts[si][2];document.getElementById('sortNext').hidden=false};box.appendChild(b)});document.getElementById('sortFeedback').textContent='';document.getElementById('sortNext').hidden=true}
+document.getElementById('sortNext').onclick=()=>{si=(si+1)%sorts.length;showSort()};showSort();
+// pendulum model
+let angle=0,playing=true,last=0,phase=0;const bob=document.getElementById('bob'),line=document.getElementById('string'),len=document.getElementById('length');
+function draw(ts){if(!last)last=ts;let dt=Math.min((ts-last)/1000,.05);last=ts;if(playing)phase+=dt*(2.8*Math.sqrt(110/Number(len.value)));let a=Math.sin(phase)*.55,x=120+Math.sin(a)*Number(len.value),y=10+Math.cos(a)*Number(len.value);line.setAttribute('x2',x);line.setAttribute('y2',y);bob.setAttribute('cx',x);bob.setAttribute('cy',y);requestAnimationFrame(draw)}
+requestAnimationFrame(draw);function updateLen(){let v=Number(len.value);document.getElementById('lengthValue').textContent=v<85?'Короткая':v>130?'Длинная':'Средняя';document.getElementById('periodValue').textContent='Период: ~'+(2*Math.PI*Math.sqrt((v/100)/9.81)).toFixed(1)+' с';}len.oninput=updateLen;updateLen();document.getElementById('swingBtn').onclick=()=>{playing=!playing;document.getElementById('swingBtn').textContent=playing?'⏸ Пауза':'▶ Продолжить';document.getElementById('pendulumFeedback').textContent=playing?'Наблюдай за скоростью качания.':'Маятник остановлен. Измени длину и продолжи наблюдение.'};
+// ruler
+document.getElementById('ruler').oninput=e=>{let v=+e.target.value;document.querySelector('.sim').style.setProperty('--ruler',(v*8)+'%');document.getElementById('rulerValue').textContent=v+' см'};document.getElementById('ruler').dispatchEvent(new Event('input'));
+// quiz
+const qs=[
+['Что изучает физика?',['Только планеты','Явления природы, свойства тел и закономерности','Только электричество'],1,'Физика изучает природу и закономерности происходящих в ней явлений.','Что такое физика'],
+['Автобус выехал со станции. Какое явление наблюдаем?',['Механическое','Магнитное','Звуковое'],0,'Изменяется положение автобуса относительно станции — это движение.','Физические явления'],
+['Лёд превратился в воду. Это…',['Химическое явление обязательно','Тепловое физическое явление','Магнитное явление'],1,'При плавлении меняется агрегатное состояние вещества, новое вещество не появляется.','Физические явления'],
+['Что из списка является физическим телом?',['Медь','Медная проволока','Медный цвет'],1,'Проволока — отдельный предмет, то есть физическое тело.','Тела и вещества'],
+['Из чего сделана стеклянная ваза?',['Из стекла','Из вазы','Из материи только'],0,'Ваза — тело, стекло — вещество.','Тела и вещества'],
+['Что такое наблюдение?',['Намеренно менять условия опыта','Внимательно изучать явление, не вмешиваясь','Записывать только формулы'],1,'При наблюдении изучают происходящее, не создавая специально новые условия.','Наблюдения и опыты'],
+['Какой вариант — эксперимент?',['Смотреть на дождь из окна','Измерять тень в разное время, отмечая результаты','Вспомнить дождь'],1,'Измерения и систематическое исследование — часть эксперимента.','Наблюдения и опыты'],
+['Чем измеряют время?',['Термометром','Линейкой','Часами или секундомером'],2,'Для измерения времени используют часы или секундомер.','Измерения'],
+['Какая единица измерения массы в СИ?',['Килограмм','Метр','Секунда'],0,'Основная единица массы в СИ — килограмм (кг).','Измерения'],
+['Колокольчик звучит, потому что…',['Он нагрел воздух','Возникают колебания, создающие звук','Он отражает свет'],1,'Колебания колокольчика создают звуковые волны.','Физические явления'],
+['Что нужно указать в результате измерения?',['Только число','Только единицу','Число и единицу измерения'],2,'Например, 8 см: число и единица вместе сообщают результат.','Измерения'],
+['Как поступает исследователь?',['Задаёт вопрос, проверяет предположение и делает вывод','Сразу считает догадку истиной','Избегает повторных наблюдений'],0,'Физическое исследование строится на вопросах, проверке и выводах.','Наблюдения и опыты']
+];let qi=0,score=0,answered=false;const qDone=JSON.parse(localStorage.getItem('phys7quiz')||'null');
+function renderQuiz(){let q=qs[qi];document.getElementById('quizCount').textContent=`Вопрос ${qi+1} из ${qs.length}`;document.getElementById('quizBar').style.width=(qi/qs.length*100)+'%';document.getElementById('quizQ').textContent=q[0];let box=document.getElementById('quizAnswers');box.innerHTML='';q[1].forEach((t,i)=>{let b=document.createElement('button');b.className='answer';b.textContent=t;b.onclick=()=>{if(answered)return;answered=true;let ok=i===q[2];if(ok)score++;b.classList.add(ok?'correct':'wrong');if(!ok)box.children[q[2]].classList.add('correct');document.getElementById('quizFeedback').textContent=(ok?'Верно! ':'Правильный ответ: '+q[1][q[2]]+'. ')+q[3];document.getElementById('quizFeedback').style.color=ok?'#91e9bb':'#ffc0c0';document.getElementById('quizNext').disabled=false;document.getElementById('quizNext').textContent=qi===qs.length-1?'Узнать результат':'Следующий вопрос →'};box.appendChild(b)});document.getElementById('quizFeedback').textContent='';document.getElementById('quizNext').disabled=true;document.getElementById('quizNext').textContent='Следующий вопрос →';answered=false}
+document.getElementById('quizNext').onclick=()=>{if(qi<qs.length-1){qi++;renderQuiz()}else{localStorage.setItem('phys7quiz',JSON.stringify({score,at:Date.now()}));document.getElementById('finalScore').textContent=score+' / '+qs.length;document.getElementById('finalTitle').textContent=score>=10?'Блестяще! Отличная работа!':score>=7?'Отличный старт!':'Хорошее начало!';document.getElementById('finalText').textContent=score>=10?'Ты уверенно справилась с первым исследованием. Продолжай задавать вопросы!':score>=7?'Основы уже складываются. Повтори главы, где было непросто, и двигайся дальше.':'Каждый исследователь учится постепенно. Вернись к главам и попробуй ещё раз — у тебя получится!';go(8)}};
+function restart(){qi=0;score=0;renderQuiz();completed=new Set();localStorage.removeItem('phys7done');go(0)}
+renderQuiz();
+</script>
+</body></html>
